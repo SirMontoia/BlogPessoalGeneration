@@ -1,0 +1,17 @@
+.fontSize16{
+    font-size: 16pt;
+}
+
+a{
+    cursor: pointer;
+}
+
+.imgSair{
+    height: 50px;
+    width: 50px;
+    
+}
+
+.imgMelhorar{
+    object-fit: cover;
+}

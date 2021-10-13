@@ -1,0 +1,53 @@
+
+.divCima{
+    height: 250px;
+    background-color: rgb(100,149,237);
+    
+}
+
+.divPrincipal{
+    
+    height: 800px;
+    background-color: rgb(221, 220, 220);
+}
+
+
+.divBaixo {
+    height: 0px;
+    position: relative;
+    margin-top: 50px;
+    background-color: rgb(12, 151, 151);
+    
+    
+  }
+
+  .imgODS{
+    
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        height: 100px; 
+        width: 100px;
+        padding: 0%;
+  }
+  
+  
+    
+  .centroConteudo {
+    padding: 70px 0;
+    
+    text-align: center;
+  }
+
+  .imgsIntegrantes{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    
+        
+    }
+  
+  
+  
+  

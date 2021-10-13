@@ -1,0 +1,13 @@
+#img-bg{
+    background-image: url('https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+
+    min-height: 1000px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.corBotoes{
+    background-color: whitesmoke;
+}

@@ -1,0 +1,19 @@
+.fs-54{
+    font-size: 54pt;
+    color:red;
+}
+
+.fs-18{
+
+    font-size: 18pt;
+    color: red
+}
+
+
+.imgFundo{
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/830f8260-97be-4278-9b00-a953daf6a2b3/d1yr1j0-0077c6bf-0699-412f-bede-aa63f75c8a4e.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzgzMGY4MjYwLTk3YmUtNDI3OC05YjAwLWE5NTNkYWY2YTJiM1wvZDF5cjFqMC0wMDc3YzZiZi0wNjk5LTQxMmYtYmVkZS1hYTYzZjc1YzhhNGUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3UIE7pXw-CfzEnNmIQ9wjr24yWwO7PJo1euVvq6N5_8);
+
+     background-repeat: no-repeat ;
+
+    background-size: cover;
+}

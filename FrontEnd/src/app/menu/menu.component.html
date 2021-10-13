@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="width: 5000px;">
+    <ul class="navbar-nav m-auto d-flex align-items-center">
+      <li class="nav-item active ">
+        <img
+          src="{{foto}}"
+          alt="imagem do user" width="100px" height="100px" class="imgMelhorar rounded-circle " style="margin-left: 500px;">
+      </li>
+      <li class="nav-item pl-3">
+        <p class="m-0 font-weight-bold text-white fontSize16">Olá, {{nome}}</p>
+      </li>
+
+      <li class="nav-item pl-3 ">
+        <a [routerLink]= "['/user-edit', id]"     >
+          <p class=" text-white fontSize16 m-0 align-items-center">
+            <i class="fa fa-cutlery text-white fontSize16 m-0" aria-hidden="true"></i>
+          </p>
+        </a>
+
+
+      </li>
+
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto d-flex align-items-center">
+      <li class="nav-item pl-3">
+        <a (click)='sair()' class="m-0 font-weight-bold text-white fontSize16">Sair <img class="imgSair"
+            src="https://static.thenounproject.com/png/2268862-200.png" alt="Icone sair"></a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
