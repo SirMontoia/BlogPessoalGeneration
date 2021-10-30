@@ -27,6 +27,10 @@ getByIdTema(idTema: number): Observable<Tema>{
    return this.http.get<Tema>(`https://blogpessoal29.herokuapp.com/api/v1/tema/${idTema}`, this.token)
 }
 
+getByTema(tema: string): Observable<Tema[]>{
+    return this.http.get<Tema[]> (`https://blogpessoal29.herokuapp.com/api/v1/tema/pesquisa/${tema}`, this.token)
+}
+
 
 postTema(tema: Tema): Observable<Tema>{
 

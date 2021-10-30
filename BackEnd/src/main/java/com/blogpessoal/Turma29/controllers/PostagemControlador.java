@@ -101,7 +101,7 @@ public class PostagemControlador {
 	}
 	
 	 @GetMapping("/pesquisa/{titulo}")
-	    public ResponseEntity<List<Postagem>> buscarPorTituloII(@RequestParam(defaultValue = "") String titulo) {
+	    public ResponseEntity<List<Postagem>> buscarPorTituloII(@PathVariable (value = "titulo") String titulo) {
 	        List<Postagem> objetoLista = repositorio.findAllByTituloContainingIgnoreCase(titulo);
 
 	        if (objetoLista.isEmpty()) {

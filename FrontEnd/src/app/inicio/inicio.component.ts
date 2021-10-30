@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -23,9 +24,14 @@ export class InicioComponent implements OnInit {
   id: number
   tema: Tema = new Tema
   listaPostagens: Postagem[]
+  tituloPost: string 
+  nomeTema: string
   
   user: User = new User
   idUser = environment.id
+
+  key = 'data'
+  reverse = true
 
 
 
@@ -101,7 +107,32 @@ export class InicioComponent implements OnInit {
   }
 
 
-    
+  findByTituloPostagem(){
+
+      if(this.tituloPost == ''){
+        this.getAllPostagens()
+      }else{
+        
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp:Postagem[])=>{ 
+        this.listaPostagens = resp
+      })
+    }
+      }
+
+
+      findByNomeTema(){
+
+        if (this.nomeTema == ''){
+          this.getAllTemas
+        }else{
+          this.temaService.getByTema(this.nomeTema).subscribe((resp:Tema[])=>{
+            this.listaTemas = resp
+          })
+        }
+
+
+      }
+
 
 
 }

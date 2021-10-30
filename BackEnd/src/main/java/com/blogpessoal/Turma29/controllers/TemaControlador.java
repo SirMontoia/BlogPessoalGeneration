@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blogpessoal.Turma29.model.Postagem;
@@ -48,6 +49,21 @@ public class TemaControlador {
 			return ResponseEntity.status(204).build();
 		}
 }
+	
+	
+	@GetMapping ("/pesquisa/{tema}")
+	public ResponseEntity <List<Tema>> buscaPorTema(@PathVariable(value = "tema") String tema){
+		List<Tema> objetoLista = repositorio.findByTemaContainingIgnoreCase(tema);
+		
+		if(objetoLista.isEmpty()) {
+			return ResponseEntity.status(204).build();
+		}
+		else {
+			return ResponseEntity.status(200).body(objetoLista);
+		}
+	}
+	
+	
 	
 	@PutMapping ("/atualizar")
 	public ResponseEntity<Tema> atualizar (@Valid @RequestBody Tema temaParaAtualizar){
