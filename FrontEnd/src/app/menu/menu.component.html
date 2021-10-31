@@ -11,11 +11,11 @@
           src="{{foto}}"
           alt="imagem do user" width="100px" height="100px" class="imgMelhorar rounded-circle " style="margin-left: 500px;">
       </li>
-      <li class="nav-item pl-3">
+      <li  class="nav-item pl-3">
         <p class="m-0 font-weight-bold text-white fontSize16">Olá, {{nome}}</p>
       </li>
 
-      <li class="nav-item pl-3 ">
+      <li *ngIf = 'auth.adm()' class="nav-item pl-3 ">
         <a [routerLink]= "['/user-edit', id]"     >
           <p class=" text-white fontSize16 m-0 align-items-center">
             <i class="fa fa-cutlery text-white fontSize16 m-0" aria-hidden="true"></i>

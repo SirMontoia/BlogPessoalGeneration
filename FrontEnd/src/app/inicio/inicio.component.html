@@ -6,7 +6,7 @@
 
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 text-white">
-                    <h1 class="fs-54">Seja Bem Vinde!</h1>
+                    <h1 class="fs-54" >Seja Bem Vinde!</h1>
                     <h5 class="fs-18">Expresse aqui os seus gostos e desgostos!</h5>
                 </div>
             </div>
@@ -14,7 +14,7 @@
             <div class="row justify-content-center mt-3 ">
                 <div class="col-md-6">
                     <button class="btn btn-danger mr-2" data-toggle="modal" data-target="#novaPostagem" style="color: rgb(255, 255, 255);" >Nova Postagem</button>
-                    <a class="btn btn-danger" href="#Postagens" style="color: rgb(255, 255, 255);">Ver Postagens</a>
+                    <a  class="btn btn-danger" href="#Postagens" style="color: rgb(255, 255, 255);">Ver Postagens</a>
                 </div>
             </div>
 
@@ -61,6 +61,8 @@
                   </div>
                 </div>
 
+                
+
 
               </div>
 
@@ -68,6 +70,30 @@
             </div>
             
             <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+                
+              <div class="card-columns">
+
+                <div class="card" *ngFor="let item of user.minhasPostagens | orderBy: key : reverse">
+                  
+                  <div class="card-body">
+                    <h5 class="card-title"> {{item.titulo}}</h5>
+                    <small class="text-muted">Tema: {{item.temaRelacionado.tema}}</small>
+                    <p class="card-text">{{item.descricao}}</p>
+
+
+                    <a [routerLink] = "['/postagem-edit', item.idPostagem]" class="text-info mr-3" href=""> Editar </a>
+                    <a [routerLink] = "['/postagem-delete', item.idPostagem]" class="text-danger" href=""> Apagar </a>
+
+                    
+                  </div>
+                </div>
+
+
+              </div>
+        </div>
+
+
+        <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
                 
               <div class="card-columns">
 
@@ -118,6 +144,8 @@
                       </p>
                     </div>
                   </div>
+
+                  
                 </div>
 
 
