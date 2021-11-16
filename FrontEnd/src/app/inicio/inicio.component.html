@@ -7,7 +7,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 text-white">
                     <h1 class="fs-54" >Seja Bem Vinde!</h1>
-                    <h5 class="fs-18">Expresse aqui os seus gostos e desgostos!</h5>
+                    <h1 class="fs-18 mt-5">Expresse aqui os seus gostos e desgostos!</h1>
                 </div>
             </div>
 
@@ -29,7 +29,7 @@
         <nav>
             <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
              
-                <a class="nav-item nav-link active font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true" >Todas as Postagens</a>
+                <a class="nav-item nav-link text-danger active font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true" >Todas as Postagens</a>
              
               <a (click) = 'findByIdUser()' class="nav-item nav-link text-danger font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas Postagens</a>
               
@@ -54,10 +54,14 @@
                 <div class="card" *ngFor="let item of listaPostagens | orderBy: key : reverse">
                   
                   <div class="card-body">
+                    
+                    <img src="{{item.fotoPostagem}}" alt="" style="height: 200px ; width: 300px ; object-fit: cover;">
                     <h5 class="card-title m-0"> {{item.titulo}}</h5>
                     <small class="text-muted">Tema: {{item.temaRelacionado.tema}}</small>
                     <p class="card-text mt-3">{{item.descricao}}</p>
-                    <p class="card-text"><small class="text-muted"> by: {{item.criador.nome}}</small></p>
+                    
+                    <p class="card-text"><small class="text-muted" style="margin-left: 90px;"> by: {{item.criador.nome}}</small></p>
+                    <img src="{{item.criador.foto}}" alt="imagem do user" width="100px" height="105px" class="imgMelhorar rounded-circle "  style="margin-left: 100px;">
                   </div>
                 </div>
 
@@ -69,28 +73,7 @@
 
             </div>
             
-            <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
-                
-              <div class="card-columns">
-
-                <div class="card" *ngFor="let item of user.minhasPostagens | orderBy: key : reverse">
-                  
-                  <div class="card-body">
-                    <h5 class="card-title"> {{item.titulo}}</h5>
-                    <small class="text-muted">Tema: {{item.temaRelacionado.tema}}</small>
-                    <p class="card-text">{{item.descricao}}</p>
-
-
-                    <a [routerLink] = "['/postagem-edit', item.idPostagem]" class="text-info mr-3" href=""> Editar </a>
-                    <a [routerLink] = "['/postagem-delete', item.idPostagem]" class="text-danger" href=""> Apagar </a>
-
-                    
-                  </div>
-                </div>
-
-
-              </div>
-        </div>
+           
 
 
         <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
@@ -100,9 +83,12 @@
                 <div class="card" *ngFor="let item of user.minhasPostagens | orderBy: key : reverse">
                   
                   <div class="card-body">
+                   
+                    <img src="{{item.fotoPostagem}}" alt="" style="height: 200px ; width: 300px ; object-fit: cover;">
                     <h5 class="card-title"> {{item.titulo}}</h5>
                     <small class="text-muted">Tema: {{item.temaRelacionado.tema}}</small>
                     <p class="card-text">{{item.descricao}}</p>
+                    
 
 
                     <a [routerLink] = "['/postagem-edit', item.idPostagem]" class="text-info mr-3" href=""> Editar </a>
@@ -135,6 +121,8 @@
                 <div class="card-columns" *ngFor = ' let tema of listaTemas'>
                   <div class = "card text-center" *ngFor = 'let item of tema.postagens | orderBy: key: reverse'>
                     <div class="card-body">
+                      
+                      <img src="{{item.fotoPostagem}}" alt="" style="height: 200px ; width: 300px ; object-fit: cover;">
                       <h5 class = 'card-title m-0'> Titulo da postagem: {{item.titulo}}</h5>
                       <p class="card-text mt-3">{{item.descricao}}</p>
                       <p class="card-text">
@@ -142,6 +130,7 @@
                           by: {{item.criador.nome}}
                         </small>
                       </p>
+                      <img src="{{item.criador.foto}}" alt="imagem do user" width="100px" height="105px" class="imgMelhorar rounded-circle ">
                     </div>
                   </div>
 
@@ -170,6 +159,12 @@
           </button>
         </div>
         <div class="modal-body">
+
+
+          <div class="form-group">
+            <label for="foto">Foto</label>
+            <input [(ngModel)]="postagem.fotoPostagem" type="text" class="form-control" id="titulo" placeholder="Coloque aqui sua imagem">
+        </div>
           
             <div class="form-group">
               <label for="titulo">Título</label>

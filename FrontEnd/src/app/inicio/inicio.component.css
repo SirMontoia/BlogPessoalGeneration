@@ -1,11 +1,11 @@
 .fs-54{
-    font-size: 54pt;
+    font-size: 45pt;
     color:red;
 }
 
 .fs-18{
 
-    font-size: 18pt;
+    font-size: 20pt;
     color: red
 }
 
@@ -17,4 +17,8 @@
 
     background-size: cover;
     
+}
+
+.imgMelhorar{
+    object-fit: cover;
 }

@@ -1,21 +1,19 @@
-<div class="container-fluid bg-warning">
+<div class="container-fluid img-bg m-0 justify-content-center d-flex align-items-center ">
 
 
-    <div class="row">
+    
 
-        <div class="col-md-6 img-bg">
-
-        </div>
+        
             
-        <div class="col-md-6 mt-5 mb-5">
+        <div class=" col-md-4 " style="background-color: rgba(0, 0, 0, 0.3);">
 
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-10">
+            <div class=" d-flex  ">
+                <div class=" container-fluid" >
 
-                    <h1 class="text center">Cadastro</h1>
+                    <h1 class="text center mt-3 text-danger">Cadastro</h1>
 
                     <div class="form-group ">
-                        <label for="nome"> Nome</label>
+                        <label for="nome "> Nome</label>
                         <input [(ngModel)] = "user.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Seu Nome de guerra!" (click) = "teste()">
                     </div>
 
@@ -51,8 +49,8 @@
 
                     <div class="d-flex justify-content-center">
 
-                        <button type="submit" class="btn btn-danger mr-4" routerLink='/entrar'> Cancelar </button>
-                        <button type="submit" class="btn btn bg-success" (click) ='cadastrar()'> Cadastrar </button>
+                        <button type="submit" class="btn btn-danger mr-4 mb-3" routerLink='/entrar'> Cancelar </button>
+                        <button type="submit" class="btn btn bg-success mb-3" (click) ='cadastrar()'> Cadastrar </button>
 
                     </div>
 
@@ -62,6 +60,6 @@
 
         </div>
 
-    </div>
+    
 
 </div>
